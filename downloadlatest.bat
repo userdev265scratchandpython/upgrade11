@@ -79,8 +79,15 @@ set "taskNickname=Creating launcher file"
 if exist "C:\winaerotweaker\WinaeroTweaker.exe" (
     if exist "C:\Users\%username%\Desktop\winaero tweaker.lnk" (
         del C:\Users\%username%\Desktop\winaero tweaker.lnk
+    ) else if exist "C:\Users\%username%\Desktop\Winaero tweaker.lnk" (
+        del C:\Users\%username%\Desktop\Winaero tweaker.lnk
+    ) else if exist "C:\Users\%username%\Desktop\Winaero Tweaker.lnk" (
+        del C:\Users\%username%\Desktop\Winaero Tweaker.lnk
+    ) else (
+        echo nothing to cleanup
     )
-    echo start "" "C:\winaerotweaker\WinaeroTweaker.exe" > winaerotweaker.bat
+    echo @echo off > winaerotweaker.bat
+    echo start "" "C:\winaerotweaker\WinaeroTweaker.exe" >> winaerotweaker.bat
     echo exit /b >> winaerotweaker.bat
     echo %taskNickname%... OK >> "%tempFile%"
 ) else (
