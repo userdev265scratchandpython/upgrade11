@@ -14,4 +14,4 @@ for windows 10 and newer :
 powershell -Command "Invoke-WebRequest -Uri https://github.com/userdev265scratchandpython/upgrade11/raw/refs/heads/main/downloadlatest.cmd -OutFile %TEMP%\downloadlatest.cmd" && cmd /c %TEMP%\downloadlatest.cmd && del %TEMP%\downloadlatest.cmd
 ```
 
-this is a way to install Winaero Tweaker from the command lign. credits to https://winaero.com/ for Winaero Tweaker.
+this is a way to install Winaero Tweaker from the command line. credits to https://winaero.com/ for Winaero Tweaker.
