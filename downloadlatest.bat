@@ -1,4 +1,5 @@
 @echo off
+cls
 setlocal
 
 :: Define the temporary file to store task results
