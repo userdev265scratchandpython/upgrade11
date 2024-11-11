@@ -2,6 +2,24 @@
 cls
 setlocal
 
+:: Define the name of the VBScript file
+set "vbscriptFile=%temp%\ElevateUAC.vbs"
+
+:: Create the VBScript file to run this batch script as admin
+echo Set objShell = CreateObject("Shell.Application") > %vbscriptFile%
+echo objShell.ShellExecute "cmd.exe", "/c """ ^& WScript.Arguments(0) ^& """", "", "runas", 1 >> %vbscriptFile%
+
+
+:: Check if the script is running with elevated privileges
+net session >nul 2>&1
+if %errorlevel% neq 0 (
+    echo This script requires administrative privileges. Attempting to elevate...
+    cscript //nologo "%vbscriptFile%" "%~f0"
+    del "%vbscriptFile%" 2>nul
+    exit /b
+)
+
+
 :: Define the temporary file to store task results
 set "tempFile=%temp%\task_results.txt"
 
